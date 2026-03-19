@@ -1,15 +1,12 @@
 const prompt = require('prompt-sync')();
 
-let valorItem = parseFloat(prompt("Qual o valor do item: "))
-
-let outroItem = prompt("Deseja adicionar mais algum item? s/n: ")
-
-let valorTotal = valorItem
+let total = 0
+let outroItem;
 
 do {
-    valorItem = parseFloat(prompt("Qual o valor deste item?"))
-    calculo = valorItem + valorTotal
-    outroItem = prompt("Deseja adicionar mais algum item? s/n: ")
+    let valorItem = parseFloat(prompt("Qual o valor do item: "));
+    total += valorItem;
+    outroItem = prompt("Deseja adicionar mais algum item? s/n: ");
 } while (outroItem == 's')
-console.log(calculo)
+console.log("Total a pagar: " + total)
 
